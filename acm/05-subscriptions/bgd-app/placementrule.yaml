@@ -1,0 +1,13 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  labels:
+    app: bdg-app
+  name: bdg-pr
+  namespace: bdg
+spec:
+  clusterSelector:
+    matchLabels:
+      'cluster.open-cluster-management.io/clusterset': 'clusterset1'
+...

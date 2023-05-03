@@ -1,0 +1,26 @@
+---
+apiVersion: multicluster.odf.openshift.io/v1alpha1
+kind: MirrorPeer
+metadata:
+  labels:
+    cluster.open-cluster-management.io/backup: resource
+  name: mirrorpeer-sync-5m
+spec:
+  items:
+    - clusterName: primary
+      storageClusterRef:
+        name: ocs-storagecluster
+        namespace: openshift-storage
+    - clusterName: secondary
+      storageClusterRef:
+        name: ocs-storagecluster
+        namespace: openshift-storage
+  manageS3: true
+  schedulingIntervals:
+    - 1m
+    - 2m
+    - 3m
+    - 4m
+    - 5m
+  type: async
+..
