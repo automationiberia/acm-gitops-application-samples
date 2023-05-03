@@ -9,5 +9,6 @@ metadata:
 spec:
   clusterSelector:
     matchLabels:
-      'cluster.open-cluster-management.io/clusterset': 'clusterset1'
+      cluster.open-cluster-management.io/clusterset: clusterset1
+      vendor: OpenShift
 ...
