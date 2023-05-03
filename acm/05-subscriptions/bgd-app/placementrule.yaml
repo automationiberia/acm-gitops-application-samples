@@ -3,9 +3,9 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   labels:
-    app: bdg-app
-  name: bdg-pr
-  namespace: bdg
+    app: bgd-app
+  name: bgd-pr
+  namespace: bgd
 spec:
   clusterSelector:
     matchLabels:

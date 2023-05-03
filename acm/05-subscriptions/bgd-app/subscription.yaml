@@ -7,15 +7,15 @@ metadata:
     apps.open-cluster-management.io/git-path: applications/bgd/base-ocp
     apps.open-cluster-management.io/reconcile-option: merge
   labels:
-    app: bdg-app
-  name: bdg-subs
-  namespace: bdg
+    app: bgd-app
+  name: bgd-subs
+  namespace: bgd
 spec:
   channel: application-samples/gitops
   placement:
     placementRef:
       kind: PlacementRule
-      name: bdg-pr
+      name: bgd-pr
   timewindow:
     windowtype: active
     location: "Europe/Madrid"

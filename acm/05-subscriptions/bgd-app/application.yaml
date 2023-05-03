@@ -2,8 +2,8 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-  name: bdg-app
-  namespace: bdg
+  name: bgd-app
+  namespace: bgd
 spec:
   componentKinds:
   - group: apps.open-cluster-management.io
@@ -13,5 +13,5 @@ spec:
       - key: app
         operator: In
         values:
-          - bdg-app
+          - bgd-app
 ...
