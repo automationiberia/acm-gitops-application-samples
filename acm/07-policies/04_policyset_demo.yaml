@@ -1,0 +1,25 @@
+---
+apiVersion: policy.open-cluster-management.io/v1beta1
+kind: PolicySet
+metadata:
+  name: acm-policieset-demo
+  namespace: acm-policies-demo
+spec:
+  description: ""
+  policies:
+    - policy-nginx-deployment-templatized
+---
+apiVersion: policy.open-cluster-management.io/v1
+kind: PlacementBinding
+metadata:
+  name: test-placement
+  namespace: acm-policies-demo
+placementRef:
+  name: placement-policy-nginx-deployment-templatized
+  apiGroup: apps.open-cluster-management.io
+  kind: PlacementRule
+subjects:
+  - name: acm-policieset-demo
+    apiGroup: policy.open-cluster-management.io
+    kind: PolicySet
+...
