@@ -1,0 +1,10 @@
+---
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- 01_acm_namespace.yaml
+- 02_acm_operatorgroup.yaml
+- 03_acm_subscription.yaml
+- 04_acm_multiclusterhub_secret.yaml
+- 05_acm_multiclusterhub.yaml
+...
