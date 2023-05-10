@@ -156,8 +156,6 @@ spec:
       type: ManagedClusterConditionAvailable
   clusterSelector:
     matchExpressions:
-    matchExpressions:
-      - {key: name, operator: NotIn, values: ["local-cluster"]}
-      - {key: name, operator: NotIn, values: ["single-node"]}
+      - {key: name, operator: NotIn, values: ["local-cluster", "ocp-sno"]}
       - {key: vendor, operator: In, values: ["OpenShift"]}
 ...
