@@ -51,7 +51,6 @@ spec:
                   source: redhat-operators
                   sourceNamespace: openshift-marketplace
                   startingCSV: '{{ if eq (fromClusterClaim "name") "primary" }} {{ stable-2.3-cluster-scoped }} {{ else }} {{ stable-2.2-cluster-scoped }} {{ end }}'
-                  startingCSV: stable-2.3-cluster-scoped
 #            - complianceType: musthave
 #              objectDefinition:
 #                apiVersion: automationhub.ansible.com/v1beta1
