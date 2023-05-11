@@ -2,7 +2,6 @@
 kind: Kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
-- infrastructure_eks.yaml
 - managedcluster_eks.yaml
 - managedcluster_sno.yaml
 ...
