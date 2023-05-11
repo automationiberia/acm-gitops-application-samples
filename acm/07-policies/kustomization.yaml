@@ -1,0 +1,9 @@
+---
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- acm_policies_namespace.yaml
+- policy_aap.yaml
+- policy_nginx_deployment.yaml
+- policyset_demo.yaml
+...
