@@ -1,0 +1,9 @@
+---
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- 03_acm_placement_eks.yaml
+- 03_acm_placement_ocp_pre.yaml
+- 03_acm_placement_ocp_pro.yaml
+- 03_acm_placement_ocp.yaml
+...

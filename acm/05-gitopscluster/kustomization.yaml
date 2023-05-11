@@ -1,0 +1,9 @@
+---
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+resources:
+- 04_acm_gitopscluster_eks.yaml
+- 04_acm_gitopscluster_ocp_pre.yaml
+- 04_acm_gitopscluster_ocp_pro.yaml
+- 04_acm_gitopscluster_ocp.yaml
+...
