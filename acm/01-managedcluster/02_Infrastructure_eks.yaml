@@ -1,0 +1,14 @@
+---
+apiVersion: config.openshift.io/v1
+kind: Infrastructure
+metadata:
+  name: cluster ## ====> Don't change it. It MUST BE cluster
+spec:
+  cloudConfig:
+    name: ""
+  platformSpec:
+    aws: {}
+    type: AWS
+status:
+  apiServerURL:  "{{ eks-endpoint-ChangeMe }}"
+...

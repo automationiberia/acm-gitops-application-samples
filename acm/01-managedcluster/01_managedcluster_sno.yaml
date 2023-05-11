@@ -9,7 +9,7 @@ kind: ManagedCluster
 metadata:
   name: ocp-singlenode
   labels:
-    name: single-node
+    name: ocp-singlenode
     cloud: auto-detect
     vendor: auto-detect
   annotations: {}
@@ -25,7 +25,7 @@ spec:
   clusterName: ocp-singlenode
   clusterNamespace: ocp-singlenode
   clusterLabels:
-    name: single-node
+    name: ocp-singlenode
     cloud: auto-detect
     vendor: auto-detect
   applicationManager:

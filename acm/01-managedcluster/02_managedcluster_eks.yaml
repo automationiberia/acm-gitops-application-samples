@@ -1,0 +1,42 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: eks-primary
+---
+apiVersion: cluster.open-cluster-management.io/v1
+kind: ManagedCluster
+metadata:
+  name: eks-primary
+  labels:
+    name: eks-primary
+    cloud: auto-detect
+    vendor: auto-detect
+  annotations: {}
+spec:
+  hubAcceptsClient: true
+---
+apiVersion: agent.open-cluster-management.io/v1
+kind: KlusterletAddonConfig
+metadata:
+  name: eks-primary
+  namespace: eks-primary
+spec:
+  clusterName: eks-primary
+  clusterNamespace: eks-primary
+  clusterLabels:
+    name: eks-primary
+    cloud: auto-detect
+    vendor: auto-detect
+  applicationManager:
+    enabled: true
+    argocdCluster: false
+  policyController:
+    enabled: true
+  searchCollector:
+    enabled: true
+  certPolicyController:
+    enabled: true
+  iamPolicyController:
+    enabled: true
+...
