@@ -12,23 +12,11 @@ spec:
               configMapRef: acm-placement
               labelSelector:
                 matchLabels:
-                  cluster.open-cluster-management.io/placement: app-gitops-placement-ocp-pre
+                  cluster.open-cluster-management.io/placement: app-gitops-placement-ocp
               requeueAfterSeconds: 180
           - list:
               elements:
                 - env: dev-ocp
-                - env: pre-ocp
-    - matrix:
-        generators:
-          - clusterDecisionResource:
-              configMapRef: acm-placement
-              labelSelector:
-                matchLabels:
-                  cluster.open-cluster-management.io/placement: app-gitops-placement-ocp-pro
-              requeueAfterSeconds: 180
-          - list:
-              elements:
-                - env: pro-ocp
   template:
     metadata:
       name: "app-bootstrap-bgd-{{ name }}-{{ env }}"
@@ -38,7 +26,7 @@ spec:
           jsonPointers:
             - /imagePullSecrets
             - /secrets
-      project: default
+      project: acm
       syncPolicy:
         automated:
           prune: true
@@ -47,7 +35,7 @@ spec:
         - CreateNamespace=true
       source:
         repoURL: "https://github.com/silvinux/bgd-acm-gitops.git"
-        targetRevision: "main"
+        targetRevision: "demo"
         path: "applications/bgd/overlays/{{ env }}"
       destination:
         namespace: "{{ env }}-bgd"

@@ -17,8 +17,6 @@ spec:
           - list:
               elements:
                 - env: dev-eks
-                - env: pre-eks
-                - env: pro-eks
   template:
     metadata:
       name: "app-bgd-{{ name }}-{{ env }}"
@@ -28,7 +26,7 @@ spec:
           jsonPointers:
             - /imagePullSecrets
             - /secrets
-      project: default
+      project: acm
       syncPolicy:
         automated:
           prune: true
@@ -37,7 +35,7 @@ spec:
         - CreateNamespace=true
       source:
         repoURL: "https://github.com/silvinux/bgd-acm-gitops.git"
-        targetRevision: "main"
+        targetRevision: "demo"
         path: "applications/bgd/overlays/{{ env }}"
       destination:
         namespace: "{{ env }}-bgd"
