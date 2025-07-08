@@ -34,7 +34,7 @@ spec:
         syncOptions:
         - CreateNamespace=true
       sources:
-        - repoURL: "https://github.com/silvinux/bgd-acm-gitops.git"
+        - repoURL: "https://github.com/automationiberia/bgd-acm-gitops.git"
           targetRevision: "demo"
           path: "applications/bgd/overlays/{{ env }}"
       destination:
