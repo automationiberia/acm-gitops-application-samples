@@ -8,11 +8,11 @@ spec:
   clusterSets:
     - eksclusterset
   predicates:
-  - requiredClusterSelector:
-      labelSelector:
-        matchExpressions:
-        - key: vendor
-          operator: "In"
-          values:
-          - EKS
+    - requiredClusterSelector:
+        labelSelector:
+          matchExpressions:
+            - key: vendor
+              operator: "In"
+              values:
+                - EKS
 ...
